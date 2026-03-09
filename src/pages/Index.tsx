@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code2, Database, Globe, Server, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const skills = [
   { icon: Code2, name: "Frontend", items: ["React.js", "Vue.js", "Tailwind CSS", "Bootstrap", "JavaScript"] },
@@ -47,7 +48,8 @@ export default function Index() {
         <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-accent/5 blur-3xl animate-pulse-slow" />
 
         <div className="container relative mx-auto px-4 pt-24">
-          <div className="max-w-3xl">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+            <div className="max-w-3xl flex-1">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,7 +110,7 @@ export default function Index() {
             >
               <div className="flex items-center gap-2 mb-3">
                 <div className="h-3 w-3 rounded-full bg-destructive/60" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
+                <div className="h-3 w-3 rounded-full bg-accent/60" />
                 <div className="h-3 w-3 rounded-full bg-primary/60" />
               </div>
               <pre className="font-mono-display text-sm text-muted-foreground">
@@ -119,6 +121,24 @@ export default function Index() {
                 <span className="text-primary">$</span> status{"\n"}
                 <span className="text-primary">● Available for opportunities</span>
               </pre>
+            </motion.div>
+            </div>
+
+            {/* Profile Photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="shrink-0"
+            >
+              <div className="relative">
+                <div className="absolute -inset-2 rounded-full bg-gradient-primary opacity-20 blur-xl animate-pulse-slow" />
+                <img
+                  src={profilePhoto}
+                  alt="Md Omor Faruk - Full Stack Developer"
+                  className="relative h-56 w-56 md:h-72 md:w-72 lg:h-80 lg:w-80 rounded-full object-cover border-2 border-primary/30 shadow-glow"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
