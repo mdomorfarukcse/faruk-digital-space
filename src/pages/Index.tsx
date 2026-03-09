@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Code2, Database, Globe, Server, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const skills = [
   { icon: Code2, name: "Frontend", items: ["React.js", "Vue.js", "Tailwind CSS", "Bootstrap", "JavaScript"] },
